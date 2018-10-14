@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+const { ipcRenderer } = window.require('electron');
+
 class App extends Component {
+  runPy = () => {
+    console.log(ipcRenderer.sendSync('runPy'));
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <button type="button" className="start-button" onClick={this.runPy}>Start VA</button>
       </div>
     );
   }
