@@ -9,7 +9,7 @@ const isDev = require('electron-is-dev');
 let mainWindow;
 
 ipcMain.on('runPy', (event) => {
-  exec('echo hello', (err, stdout) => {
+  exec('./py.sh', (err, stdout) => {
     if (err) {
       event.returnValue = err;
     } else {

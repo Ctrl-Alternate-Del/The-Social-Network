@@ -2,12 +2,22 @@
   text-align: center;
 }
 
-.start-button {
+.btn {
   color: white;
   background: palevioletred;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 3px;
+  font-size: 1.5em;
+  border: 2px solid rgb(236, 162, 187);
+  border-radius: 30px;
+  width: 5em;
+  height: 2em;
+  grid-column: 2/3;
+}
+
+.btn-group {
+  width: 20vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }

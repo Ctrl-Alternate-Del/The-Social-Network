@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
+import Buttons from './Buttons';
 
 const { ipcRenderer } = window.require('electron');
 
+
 class App extends Component {
+  state = {
+    VAInitialized: false,
+  }
+
   runPy = () => {
     console.log(ipcRenderer.sendSync('runPy'));
+    this.setState({
+      VAInitialized: true,
+    });
   }
 
   render() {
+    const { VAInitialized } = this.state;
     return (
       <div className="App">
-        <button type="button" className="start-button" onClick={this.runPy}>Start VA</button>
+        {!VAInitialized ? <Buttons runPy={this.runPy} /> : ' '}
       </div>
     );
   }
