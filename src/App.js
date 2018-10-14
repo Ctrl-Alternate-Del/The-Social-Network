@@ -21,6 +21,9 @@ class App extends Component {
     const { VAInitialized } = this.state;
     return (
       <div className="App">
+        <div className="nav">
+          <h1>the_social_network</h1>
+        </div>
         {!VAInitialized ? <Buttons runPy={this.runPy} /> : ' '}
       </div>
     );
