@@ -4,6 +4,6 @@ source activate env-name
 
 cd "../pyscripts/webcam/"
 
-python3 gen_sentence_with_emoticons.py
+python3 gen_sentence_with_emoticons.py > answer.txt
 
 source deactivate
